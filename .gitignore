@@ -1,7 +1,1 @@
-logs
-*.log
-*.log*
 node_modules
-dist
-dist-ssr
-.DS_Store

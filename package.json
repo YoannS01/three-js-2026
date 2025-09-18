@@ -1,36 +1,44 @@
 {
+  "name": "3d-particles-morphing",
   "private": true,
-  "name": "three-app",
-  "description": "Three app using vite and typescript",
-  "author": "Julien Dargelos <hello@julien.gl>",
-  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tweakpane/core": "^2.0.5",
-    "@tweakpane/plugin-essentials": "^0.2.1",
-    "camera-controls": "^3.1.0",
+    "@react-spring/three": "^9.7.5",
+    "@react-three/drei": "^9.120.8",
+    "@react-three/fiber": "^8.17.12",
+    "@react-three/postprocessing": "^2.19.1",
+    "gsap": "^3.12.5",
+    "leva": "^0.9.35",
+    "maath": "^0.10.8",
     "postprocessing": "^6.37.8",
-    "three": "^0.173.0",
-    "three-custom-shader-material": "^6.3.7",
-    "tweakpane": "^4.0.5"
+    "r3f-perf": "^7.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.9.1",
+    "react-toastify": "^11.0.3",
+    "three": "^0.172.0"
   },
   "devDependencies": {
-    "@types/node": "^24.4.0",
-    "@types/three": "^0.173.0",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.5",
-    "vite-plugin-glsl": "^1.5.1",
-    "vite-plugin-static-copy": "^3.1.2",
-    "vite-tsconfig-paths": "^5.1.4"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "packageManager": "pnpm@10.2.0+sha512.0d27364e0139c6aadeed65ada153135e0ca96c8da42123bd50047f961339dc7a758fc2e944b428f52be570d1bd3372455c1c65fa2e7aa0bfbf931190f9552001"
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.5"
+  }
 }
