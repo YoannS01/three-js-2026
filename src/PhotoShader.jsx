@@ -24,7 +24,9 @@ export default function PhotoShader({ url, position }) {
     );
 
     useFrame(() => {
-        uniforms.uPixelSize.value = pixelSize.get();
+        if (uniforms.uPixelSize) {
+            uniforms.uPixelSize.value = pixelSize.get();
+        }
     });
 
     return (

@@ -20,7 +20,6 @@ const PixelFadeShaderMaterial = shaderMaterial(
         uTime: 0,
         uResolution: new THREE.Vector2(window.innerWidth, window.innerHeight),
     },
-
     `
     varying vec2 vUv;
     void main() {
@@ -35,12 +34,11 @@ const PixelFadeShaderMaterial = shaderMaterial(
 
     void main() {
         vec2 st = gl_FragCoord.xy / uResolution.xy;
-
-        float size = 200.0; // pixels fins
+        float size = 200.0; 
         st = floor(st * size) / size;
         float noise = step(0.5, fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453 + uTime));
 
-        float fade = smoothstep(0.0, 0.6, st.y); // fade vers le haut
+        float fade = smoothstep(0.0, 0.6, st.y);
         gl_FragColor = vec4(vec3(noise * (1.0 - fade)), 1.0);
     }
   `
@@ -67,15 +65,15 @@ export default function Gallery() {
 
     return (
         <section className="relative min-h-screen w-full bg-black flex flex-col items-center justify-start pt-10 pb-5">
-
-
             <h1 className="text-white text-4xl md:text-4xl font-pixelify mb-5 text-center">
                 Mes photos 100% retro !
             </h1>
 
-
             <div className="w-full h-[90vh] relative z-2">
                 <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
+                    {/* Fond visible */}
+                    <color attach="background" args={["#111"]} />
+
                     {photos.map((url, i) => (
                         <PhotoShader
                             key={i}
@@ -89,7 +87,6 @@ export default function Gallery() {
                     ))}
                 </Canvas>
             </div>
-
 
             <button
                 onClick={() => navigate("/")}
