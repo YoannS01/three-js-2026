@@ -6,12 +6,12 @@ import { shaderMaterial } from "@react-three/drei";
 import { useRef } from "react";
 
 const photos = [
-    import.meta.env.BASE_URL + "images/retro_camera1.jpg",
-    import.meta.env.BASE_URL + "images/retro_game.jpg",
-    import.meta.env.BASE_URL + "images/retro_camera2.jpg",
-    import.meta.env.BASE_URL + "images/retro_radio.jpg",
-    import.meta.env.BASE_URL + "images/retro_camera3.jpg",
-    import.meta.env.BASE_URL + "images/retro_vinyles.jpg",
+    import.meta.env.BASE_URL + "/images/retro_camera1.jpg",
+    import.meta.env.BASE_URL + "/images/retro_game.jpg",
+    import.meta.env.BASE_URL + "/images/retro_camera2.jpg",
+    import.meta.env.BASE_URL + "/images/retro_radio.jpg",
+    import.meta.env.BASE_URL + "/images/retro_camera3.jpg",
+    import.meta.env.BASE_URL + "/images/retro_vinyles.jpg",
 ];
 
 
