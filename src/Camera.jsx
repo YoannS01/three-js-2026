@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import camera from './assets/vintage_camera.glb'
 
 export function Camera(props) {
-    const { nodes, materials } = useGLTF('/vintage_camera.glb')
+    const { nodes, materials } = useGLTF(camera)
     return (
         <group scale={[35, 35, 35]} {...props} dispose={null}>
             <group scale={0.01}>
@@ -45,4 +46,4 @@ export function Camera(props) {
     )
 }
 
-useGLTF.preload('/vintage_camera.glb')
+useGLTF.preload(camera)
