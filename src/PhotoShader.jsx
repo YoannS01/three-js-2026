@@ -9,9 +9,9 @@ export default function PhotoShader({ url, position }) {
 
     const [hovered, setHovered] = useState(false);
 
-    // Animation fluide entre deux tailles de pixels
+
     const { pixelSize } = useSpring({
-        pixelSize: hovered ? 200.0 : 20.0, // net au hover
+        pixelSize: hovered ? 200.0 : 20.0,
         config: { mass: 1, tension: 200, friction: 30 },
     });
 

@@ -14,13 +14,13 @@ const photos = [
     "/images/retro_vinyles.jpg",
 ];
 
-// Shader Material
+
 const PixelFadeShaderMaterial = shaderMaterial(
     {
         uTime: 0,
         uResolution: new THREE.Vector2(window.innerWidth, window.innerHeight),
     },
-    // Vertex Shader
+
     `
     varying vec2 vUv;
     void main() {
@@ -28,7 +28,6 @@ const PixelFadeShaderMaterial = shaderMaterial(
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
     }
   `,
-    // Fragment Shader
     `
     uniform float uTime;
     uniform vec2 uResolution;
@@ -69,12 +68,12 @@ export default function Gallery() {
     return (
         <section className="relative min-h-screen w-full bg-black flex flex-col items-center justify-start pt-10 pb-5">
 
-            {/* Texte */}
+
             <h1 className="text-white text-4xl md:text-4xl font-pixelify mb-5 text-center">
                 Mes photos 100% retro !
             </h1>
 
-            {/* Canvas des photos */}
+
             <div className="w-full h-[90vh] relative z-2">
                 <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
                     {photos.map((url, i) => (
@@ -91,7 +90,7 @@ export default function Gallery() {
                 </Canvas>
             </div>
 
-            {/* Bouton */}
+
             <button
                 onClick={() => navigate("/")}
                 className="mt-10 mb-10 px-6 py-3 rounded-full bg-white text-black font-pixelify hover:bg-gray-200 transition z-10 relative"
@@ -99,7 +98,6 @@ export default function Gallery() {
                 Retour à l'accueil🚀
             </button>
 
-            {/* Canvas du shader en background */}
             <div className="absolute bottom-0 left-0 w-full h-[200px] z-0">
                 <Canvas orthographic camera={{ position: [0, 0, 5], zoom: 100 }}>
                     <PixelBackground />

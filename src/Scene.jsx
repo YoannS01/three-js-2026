@@ -56,7 +56,7 @@ const Scene = ({ progress }) => {
 
     return (
         <>
-            {/*<OrbitControls></OrbitControls>*/}
+
             <PerspectiveCamera
                 ref={cameraRef}
                 fov={60}
@@ -67,7 +67,7 @@ const Scene = ({ progress }) => {
             />
             <Environment preset='city' />
             <Camera scale={[20, 20, 20]} />
-            {/* <axesHelper args={[500]} /> */}
+
         </>
     )
 }
