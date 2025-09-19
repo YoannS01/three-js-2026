@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { HashRouter } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
+// Utilisation de HashRouter pour le routing, ce qui est utile pour les déploiements sur GitHub Pages.
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>

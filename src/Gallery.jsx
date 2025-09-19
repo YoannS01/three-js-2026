@@ -6,16 +6,16 @@ import { shaderMaterial } from "@react-three/drei";
 import { useRef } from "react";
 
 const photos = [
-    import.meta.env.BASE_URL + "/images/retro_camera1.jpg",
-    import.meta.env.BASE_URL + "/images/retro_game.jpg",
-    import.meta.env.BASE_URL + "/images/retro_camera2.jpg",
-    import.meta.env.BASE_URL + "/images/retro_radio.jpg",
-    import.meta.env.BASE_URL + "/images/retro_camera3.jpg",
-    import.meta.env.BASE_URL + "/images/retro_vinyles.jpg",
+    import.meta.env.BASE_URL + "images/retro_camera1.jpg",
+    import.meta.env.BASE_URL + "images/retro_game.jpg",
+    import.meta.env.BASE_URL + "images/retro_camera2.jpg",
+    import.meta.env.BASE_URL + "images/retro_radio.jpg",
+    import.meta.env.BASE_URL + "images/retro_camera3.jpg",
+    import.meta.env.BASE_URL + "images/retro_vinyles.jpg",
 ];
 
 
-
+// Shader pour le fond pixelisé avec fondu en bas de page.
 const PixelFadeShaderMaterial = shaderMaterial(
     {
         uTime: 0,
@@ -53,8 +53,10 @@ function PixelBackground() {
         if (ref.current) ref.current.uTime = clock.getElapsedTime();
     });
 
+    // Le planeGeometry me permet de gérer la taille du plan en fonction de la taille de l'écran.
     return (
         <mesh>
+
             <planeGeometry args={[window.innerWidth / 100, 2]} />
             <pixelFadeShaderMaterial ref={ref} />
         </mesh>
@@ -72,7 +74,7 @@ export default function Gallery() {
 
             <div className="w-full h-[90vh] relative z-2">
                 <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
-                    {/* Fond visible */}
+
                     <color attach="background" args={["#111"]} />
 
                     {photos.map((url, i) => (

@@ -9,11 +9,12 @@ export default function PhotoShader({ url, position }) {
 
     const [hovered, setHovered] = useState(false);
 
-
+    // Animation du pixelSize au survol avec react-spring pour une transition fluide.
     const { pixelSize } = useSpring({
         pixelSize: hovered ? 200.0 : 20.0,
         config: { mass: 1, tension: 200, friction: 30 },
     });
+
 
     const uniforms = useMemo(
         () => ({
@@ -23,6 +24,7 @@ export default function PhotoShader({ url, position }) {
         [texture]
     );
 
+    //Le useFrame me permet de mettre à jour le pixelSize à chaque frame.
     useFrame(() => {
         if (uniforms.uPixelSize) {
             uniforms.uPixelSize.value = pixelSize.get();
@@ -37,6 +39,8 @@ export default function PhotoShader({ url, position }) {
             onPointerOut={() => setHovered(false)}
         >
             <planeGeometry args={[1.8, 1.8, 1.2, 1.2]} />
+
+            {/* Le vertexShader et le fragmentShader définissent le rendu des photos */}
             <shaderMaterial
                 uniforms={uniforms}
                 vertexShader={`
@@ -58,6 +62,7 @@ export default function PhotoShader({ url, position }) {
             gl_FragColor = color;
           }
         `}
+
             />
         </a.mesh>
     );

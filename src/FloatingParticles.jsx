@@ -5,12 +5,13 @@ import * as THREE from "three";
 export default function FloatingParticles({ count = 150 }) {
     const points = useRef();
 
-    // Générer des positions aléatoires
+    // Génération des positions aléatoires avec un math random.
     const positions = new Float32Array(count * 3);
     for (let i = 0; i < count * 3; i++) {
-        positions[i] = (Math.random() - 0.5) * 20; // zone large
+        positions[i] = (Math.random() - 0.5) * 20;
     }
 
+    // Animation des particules avec rotation.
     useFrame(({ clock }) => {
         if (points.current) {
             points.current.rotation.y = clock.getElapsedTime() * 0.02;
