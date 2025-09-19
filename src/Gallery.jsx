@@ -72,7 +72,7 @@ export default function Gallery() {
 
             <div className="w-full h-[90vh] relative z-2">
                 <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
-                    {/* Fond visible */}
+
                     <color attach="background" args={["#111"]} />
 
                     {photos.map((url, i) => (
