@@ -7,14 +7,9 @@ import { Camera } from './Camera';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Le composant Scene gère la caméra et son animation en fonction du scroll.
 const Scene = ({ progress }) => {
     const cameraRef = useRef(null);
-
-    // Ici le lookAt me permet de toujours garder le centre de la scène dans le viseur de la caméra.
     useFrame(() => { cameraRef.current.lookAt(0, 0, 0) });
-
-    // Le useEffect met à jour la position de la caméra en fonction de la progression du scroll.
     useEffect(() => {
         const updateCamPos = () => {
             const positions = [[3.5, 2.17, 3.7],
@@ -61,6 +56,7 @@ const Scene = ({ progress }) => {
 
     return (
         <>
+
             <PerspectiveCamera
                 ref={cameraRef}
                 fov={60}
@@ -69,7 +65,6 @@ const Scene = ({ progress }) => {
                 makeDefault
                 position={[3.5, 2.17, 3.7]}
             />
-            {/* Ici Environment me permet d'ajouter un éclairage sur mon objet 3D */}
             <Environment preset='city' />
             <Camera scale={[20, 20, 20]} />
 

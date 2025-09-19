@@ -18,7 +18,6 @@ function Home() {
     const [progress, setProgress] = useState(0);
     const navigate = useNavigate();
 
-    //Utilisation d'un useEffect pour gérer le scroll et les animations associées.
     useEffect(() => {
         gsap.timeline({
             scrollTrigger: {
@@ -50,7 +49,6 @@ function Home() {
 
     return (
         <main ref={mainRef} className="overflow-x-hidden">
-            {/* Le Suspense me permet d'afficher un écran de chargement tant que la scène 3D n'est pas prête. */}
             <Suspense
                 fallback={
                     <div className="fixed inset-0 grid place-items-center font-pixelify bg-black text-white">
